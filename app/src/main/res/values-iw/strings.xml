@@ -2,4 +2,14 @@
 <resources>
     <string name="app_name">LuckyGuess</string>
     <string name="Title">כותרת</string>
+    <string name="Home">בית</string>
+    <string name="About">אודות</string>
+    <string name="Status">סטטוס</string>
+    <string name="Round">סיבוב</string>
+    <string name="GoodGuesses">ניחושים מוצלחים:</string>
+    <string name="BadGuesses">ניחושים רעים:</string>
+    <string name="PickNumber">בבקשה בחר מספר (טווח 1 עד 9)</string>
+    <string name="CheckGuess">בדוק ניחוש</string>
+    <string name="ResetGame">איפוס משחק</string>
+    <string name="GameOver">המשחק הסתיים</string>
 </resources>

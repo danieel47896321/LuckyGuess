@@ -7,7 +7,7 @@
     android:background="@color/blue">
 
     <TextView
-        android:id="@+id/AppName"
+        android:id="@+id/appName"
         style="@style/TextView_Style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,13 +18,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/Title"
+        android:id="@+id/title"
         style="@style/TextView_Style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/Title"
-        app:layout_constraintEnd_toEndOf="@+id/AppName"
-        app:layout_constraintStart_toStartOf="@+id/AppName"
-        app:layout_constraintTop_toBottomOf="@+id/AppName" />
+        android:text="@string/Home"
+        app:layout_constraintEnd_toEndOf="@+id/appName"
+        app:layout_constraintStart_toStartOf="@+id/appName"
+        app:layout_constraintTop_toBottomOf="@+id/appName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
