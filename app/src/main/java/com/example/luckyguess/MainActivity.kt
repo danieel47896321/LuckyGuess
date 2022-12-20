@@ -84,8 +84,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
     private fun setStatus( status : TextView ){
-        val msg = resources.getString(R.string.Round) + round + " / 10" + resources.getString(R.string.NewLine)
-        resources.getString(R.string.GoodGuesses) + goodGuesses + resources.getString(R.string.NewLine) + resources.getString(R.string.BadGuesses) + badGuesses + resources.getString(R.string.NewLine)
-        status.text = msg
+        status.text = resources.getString(R.string.Round) + round + " / 10\n" +
+                resources.getString(R.string.GoodGuesses) + goodGuesses + "\n" +
+                resources.getString(R.string.BadGuesses) + badGuesses + "\n"
     }
 }
