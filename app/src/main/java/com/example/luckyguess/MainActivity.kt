@@ -1,11 +1,13 @@
 package com.example.luckyguess
 
+import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
@@ -40,7 +42,11 @@ class MainActivity : AppCompatActivity() {
     }
     private fun checkAboutButton(){
         about.setOnClickListener {
-            Toast.makeText(this, resources.getString(R.string.Home), Toast.LENGTH_SHORT).show()
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle(resources.getString(R.string.About))
+            builder.setMessage(resources.getString(R.string.Rules))
+            builder.setPositiveButton(R.string.OK) { _, _ -> }
+            builder.show()
         }
     }
     private fun checkGuessButton(){
@@ -51,10 +57,10 @@ class MainActivity : AppCompatActivity() {
                     randNumber = Random.nextInt(1, 10)
                     if (randNumber == Integer.valueOf(pickNumber.text.toString())) {
                         goodGuesses += 1
-                        answer.setImageDrawable(resources.getDrawable(R.drawable.correct))
+                        answer.setImageDrawable(ContextCompat.getDrawable(this,R.drawable.correct))
                     } else {
                         badGuesses += 1
-                        answer.setImageDrawable(resources.getDrawable(R.drawable.wrong))
+                        answer.setImageDrawable(ContextCompat.getDrawable(this,R.drawable.wrong))
                     }
                     randomNumber.text = randNumber.toString()
                     setStatus(status)
@@ -78,8 +84,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
     private fun setStatus( status : TextView ){
-        status.text = resources.getString(R.string.Round) + ": " + round + " / 10\n" +
-                resources.getString(R.string.GoodGuesses) + " " + goodGuesses +"\n" +
-                resources.getString(R.string.BadGuesses) + " " + badGuesses +"\n"
+        val msg = resources.getString(R.string.Round) + round + " / 10" + resources.getString(R.string.NewLine)
+        resources.getString(R.string.GoodGuesses) + goodGuesses + resources.getString(R.string.NewLine) + resources.getString(R.string.BadGuesses) + badGuesses + resources.getString(R.string.NewLine)
+        status.text = msg
     }
 }

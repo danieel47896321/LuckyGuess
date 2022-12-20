@@ -4,11 +4,15 @@
     <string name="Home">Home</string>
     <string name="About">About</string>
     <string name="Status">Status</string>
-    <string name="Round">Round</string>
-    <string name="GoodGuesses">Good Guesses:</string>
-    <string name="BadGuesses">Bad Guesses:</string>
+    <string name="Round">Round: </string>
+    <string name="GoodGuesses">Good Guesses: </string>
+    <string name="BadGuesses">Bad Guesses: </string>
     <string name="PickNumber">Please Pick a Number (Range 1 to 9)</string>
     <string name="CheckGuess">Check Guess</string>
     <string name="ResetGame">Reset Game</string>
     <string name="GameOver">Game Over</string>
+    <string name="OK">OK</string>
+    <string name="NewLine">\n</string>
+    <string name="NumberHint">1 — 9</string>
+    <string name="Rules">Rules of the Game:\nChoose a number between 1 and 9 and click Check Guess.\nThe goal of the game is to score as many correct guesses as possible within 10 rounds.</string>
 </resources>

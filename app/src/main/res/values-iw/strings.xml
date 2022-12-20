@@ -5,11 +5,15 @@
     <string name="Home">בית</string>
     <string name="About">אודות</string>
     <string name="Status">סטטוס</string>
-    <string name="Round">סיבוב</string>
-    <string name="GoodGuesses">ניחושים מוצלחים:</string>
-    <string name="BadGuesses">ניחושים רעים:</string>
+    <string name="Round">סיבוב: </string>
+    <string name="GoodGuesses">ניחושים מוצלחים: </string>
+    <string name="BadGuesses">ניחושים רעים: </string>
     <string name="PickNumber">בבקשה בחר מספר (טווח 1 עד 9)</string>
     <string name="CheckGuess">בדוק ניחוש</string>
     <string name="ResetGame">איפוס משחק</string>
     <string name="GameOver">המשחק הסתיים</string>
+    <string name="OK">אישור</string>
+    <string name="NewLine">\n</string>
+    <string name="NumberHint">1 — 9</string>
+    <string name="Rules">חוקי המשחק:\nבחר מספר בין 1 ל 9 ולחץ על בדוק ניחוש.\nמטרת המשחק לצבור כמה שיותר ניחושים נכונים תוך 10 סיבובים.</string>
 </resources>
