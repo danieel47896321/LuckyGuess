@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">LuckyGuess</string>
+    <string name="Title">Title</string>
 </resources>
