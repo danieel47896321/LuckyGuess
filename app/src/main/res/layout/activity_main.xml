@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grey"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <include
@@ -15,9 +17,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/s"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
@@ -26,83 +27,92 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/about"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_margin="10dp"
-                android:clickable="true"
-                android:contentDescription="@string/About"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:src="@drawable/light_bulb" />
-
-            <TextView
-                android:id="@+id/status"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/Status"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/answer"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:clickable="true"
-                android:contentDescription="@string/Status" />
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:padding="20dp">
+                android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/pickNumber"
-                    android:layout_width="60dp"
-                    android:layout_height="50dp"
-                    android:maxLength="1"
-                    android:autofillHints=""
-                    android:hint="@string/NumberHint"
-                    android:gravity="center"
-                    android:inputType="number"
-                    android:textSize="20sp" />
+                <ImageView
+                    android:id="@+id/about"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_margin="10dp"
+                    android:clickable="true"
+                    android:contentDescription="@string/About"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:src="@drawable/light_bulb" />
 
-                <EditText
-                    android:id="@+id/randomNumber"
-                    android:autofillHints=""
-                    android:layout_width="60dp"
-                    android:layout_height="50dp"
-                    android:enabled="false"
+                <TextView
+                    android:id="@+id/status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:inputType="number"
-                    android:textSize="20sp" />
+                    android:text="@string/Status"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/answer"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="2dp"
+                    android:clickable="true"
+                    android:contentDescription="@string/Status" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <EditText
+                        android:id="@+id/pickNumber"
+                        android:layout_width="60dp"
+                        android:layout_height="50dp"
+                        android:autofillHints=""
+                        android:gravity="center"
+                        android:hint="@string/NumberHint"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/randomNumber"
+                        android:layout_width="60dp"
+                        android:layout_height="50dp"
+                        android:autofillHints=""
+                        android:enabled="false"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/checkGuess"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/CheckGuess"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/resetGame"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/ResetGame"
+                    android:textAllCaps="false" />
+
             </LinearLayout>
-
-            <Button
-                android:id="@+id/checkGuess"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/CheckGuess"
-                android:textAllCaps="false" />
-
-            <Button
-                android:id="@+id/resetGame"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/ResetGame"
-                android:textAllCaps="false" />
-
-        </LinearLayout>
+        </ScrollView>
     </androidx.cardview.widget.CardView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
