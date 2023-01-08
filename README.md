@@ -14,5 +14,5 @@ Implemented MVC architecture.
 ![CHEESE!](https://user-images.githubusercontent.com/74861262/208771105-daa9fa56-1d7a-4c22-b0a8-c1d231d7460b.png)
 ![CHEESE!](https://user-images.githubusercontent.com/74861262/208771262-8abc1463-da06-4a73-ac7c-05640d5297a0.png)
 ![CHEESE!](https://user-images.githubusercontent.com/74861262/208771217-a246532a-deee-4637-87bd-03ac8b0e3220.png)
-![CHEESE!](https://user-images.githubusercontent.com/74861262/208771333-a791ce47-129e-4b74-adc4-a8dfde4e6942.png)
-![CHEESE!](https://user-images.githubusercontent.com/74861262/208771362-fa049cc1-06f6-48a6-b9b3-a8223c7b1b4f.png)
+![CHEESE!](https://user-images.githubusercontent.com/74861262/211191121-3fcd2664-70ef-412c-9cae-3e1b6f3c63c5.png)
+![CHEESE!](https://user-images.githubusercontent.com/74861262/211191135-36e89bd7-72fa-487c-acff-caeb97cdfe65.png)
