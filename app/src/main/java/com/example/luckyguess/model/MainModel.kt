@@ -1,7 +1,6 @@
 package com.example.luckyguess.model
 
 import androidx.lifecycle.ViewModel
-import kotlin.random.Random
 
 class MainModel: ViewModel() {
     var round: Int = 0

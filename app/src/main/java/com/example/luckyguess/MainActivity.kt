@@ -94,6 +94,4 @@ class MainActivity : AppCompatActivity() {
     fun showMessage(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
-
-
 }
