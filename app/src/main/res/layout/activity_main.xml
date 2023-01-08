@@ -47,9 +47,15 @@
                     android:layout_height="48dp"
                     android:layout_margin="10dp"
                     android:clickable="true"
-                    android:contentDescription="@string/About"
+                    android:contentDescription="@string/GameRules"
                     android:foreground="?android:attr/selectableItemBackground"
                     android:src="@drawable/light_bulb" />
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/status"
@@ -111,7 +117,7 @@
                     android:layout_gravity="center"
                     android:text="@string/ResetGame"
                     android:textAllCaps="false" />
-
+                </LinearLayout>
             </LinearLayout>
         </ScrollView>
     </androidx.cardview.widget.CardView>

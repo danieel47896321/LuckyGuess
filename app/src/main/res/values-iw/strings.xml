@@ -3,7 +3,7 @@
     <string name="app_name">LuckyGuess</string>
     <string name="Title">כותרת</string>
     <string name="Home">בית</string>
-    <string name="About">אודות</string>
+    <string name="GameRules">חוקי המשחק</string>
     <string name="Status">סטטוס</string>
     <string name="Round">סיבוב: </string>
     <string name="GoodGuesses">ניחושים מוצלחים: </string>
@@ -12,6 +12,7 @@
     <string name="CheckGuess">בדוק ניחוש</string>
     <string name="ResetGame">איפוס משחק</string>
     <string name="GameOver">המשחק הסתיים</string>
+    <string name="GameIsOver">המשחק הסתיים, נסה שוב.</string>
     <string name="OK">אישור</string>
     <string name="NewLine">\n</string>
     <string name="NumberHint">1 — 9</string>
