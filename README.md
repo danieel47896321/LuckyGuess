@@ -3,7 +3,9 @@
 Rules of the Game:
 Choose a number between 1 and 9 and click Check Guess.
 The goal of the game is to score as many correct guesses as possible within 10 rounds.
-you can also check the rules in the app by click on the light bul.
+You can also check the rules in the app by click on the light bul.
+
+Implemented MVC architecture.
 
 
 ![CHEESE!](https://user-images.githubusercontent.com/74861262/208771056-480549c4-2f3c-4aa3-9b8c-b8bc4b55c06f.png)
