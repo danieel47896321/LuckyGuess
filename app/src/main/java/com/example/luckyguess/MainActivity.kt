@@ -8,9 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.ViewModelProvider
 import com.example.luckyguess.controller.MainController
-import com.example.luckyguess.model.MainModel
 
 class MainActivity : AppCompatActivity() {
     private lateinit var status : TextView
@@ -20,7 +18,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var about : ImageView
     private lateinit var resetGame : Button
     private lateinit var checkGuess : Button
-    private lateinit var mainModel: MainModel
     private lateinit var mainController: MainController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,8 +25,7 @@ class MainActivity : AppCompatActivity() {
         init()
     }
     private fun init () {
-        mainModel = ViewModelProvider(this)[MainModel::class.java]
-        mainController = MainController(mainModel, this)
+        mainController = MainController(this)
         status = findViewById<TextView>(R.id.status)
         randomNumber = findViewById<TextView>(R.id.randomNumber)
         pickNumber = findViewById<TextView>(R.id.pickNumber)
@@ -42,56 +38,58 @@ class MainActivity : AppCompatActivity() {
         resetGameButton()
         checkGuessButton()
     }
-    private fun checkAboutButton(){
-        about.setOnClickListener{
-            mainController.gameRules()
+    fun mainWhenCase(id: String){
+        when(id){
+            "setStatus" -> { setStatus(mainController.getStatus(), mainController.getNumber()) }
+            "setImage" -> { setImage(mainController.getImage()) }
+            "showRules" -> { showRules(mainController.getRulesTitle(), mainController.getRulesText()) }
+            "gameOver" -> { gameOver(mainController.getGameOverTitle(), mainController.getGameOverText()) }
+            "showMessage" -> { showMessage(mainController.getSelectNumberText()) }
+            "resetView" -> { resetView(mainController.getResetText()) }
         }
     }
+    private fun checkAboutButton(){
+        about.setOnClickListener{ mainController.gameRules() }
+    }
     private fun resetGameButton(){
-        resetGame.setOnClickListener{
-            mainController.resetGame()
-        }
+        resetGame.setOnClickListener{ mainController.resetGame() }
     }
     private fun checkGuessButton(){
         checkGuess.setOnClickListener{
             if(pickNumber.text.isNotEmpty())
                 mainController.userGuess(Integer.valueOf(pickNumber.text.toString()))
             else
-                mainController.pleasePickNumber()
+                mainController.selectNumber()
         }
     }
-    fun setStatus(currentStatus: String, number: String){
+    private fun setImage(imageID: Int) { answer.setImageDrawable(ContextCompat.getDrawable(this,imageID)) }
+    private fun setStatus(currentStatus: String, number: String){
         status.text = currentStatus
         randomNumber.text = number
     }
-    fun setImage(imageID: Int) {
-        answer.setImageDrawable(ContextCompat.getDrawable(this,imageID))
-    }
-    fun showRules(title: String, message: String){
+    private fun showRules(title: String, text: String){
         val builder = AlertDialog.Builder(this)
         builder.setTitle(title)
-        builder.setMessage(message)
+        builder.setMessage(text)
         builder.setPositiveButton(R.string.OK) { _, _ -> }
         builder.setCancelable(false)
         builder.show()
     }
-    fun gameOver(title: String, message: String) {
+    private fun gameOver(title: String, text: String) {
         val builder = AlertDialog.Builder(this)
         builder.setTitle(title)
-        builder.setMessage(message)
+        builder.setMessage(text)
         builder.setPositiveButton(R.string.OK) { _, _ ->
             mainController.resetGame()
         }
         builder.setCancelable(false)
         builder.show()
     }
-    fun resetView(empty: String) {
-        randomNumber.text = empty
-        pickNumber.text = empty
+    private fun resetView(text: String) {
+        randomNumber.text = text
+        pickNumber.text = text
         mainController.setStatus()
         answer.setImageDrawable(null)
     }
-    fun showMessage(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
+    private fun showMessage(message: String) { Toast.makeText(this, message, Toast.LENGTH_SHORT).show() }
 }
